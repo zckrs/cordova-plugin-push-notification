@@ -26,28 +26,28 @@ This plugin is for use with [Cordova](http://incubator.apache.org/cordova/), and
 
 ##<a name="license"></a> LICENSE
 
-	The MIT License
+  The MIT License
 
-	Copyright (c) 2012 Adobe Systems, inc.
-	portions Copyright (c) 2012 Olivier Louvignes
+  Copyright (c) 2012 Adobe Systems, inc.
+  portions Copyright (c) 2012 Olivier Louvignes
 
-	Permission is hereby granted, free of charge, to any person obtaining a copy
-	of this software and associated documentation files (the "Software"), to deal
-	in the Software without restriction, including without limitation the rights
-	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-	copies of the Software, and to permit persons to whom the Software is
-	furnished to do so, subject to the following conditions:
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
 
-	The above copyright notice and this permission notice shall be included in
-	all copies or substantial portions of the Software.
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
 
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-	THE SOFTWARE.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.
 
 
 
@@ -82,11 +82,11 @@ This plugin is for use with [Cordova](http://incubator.apache.org/cordova/), and
 <service android:exported="false" android:name="com.amazon.cordova.plugin.ADMMessageHandler" />
 <activity android:name="com.amazon.cordova.plugin.ADMHandlerActivity" />
 <receiver android:name="com.amazon.cordova.plugin.ADMMessageHandler$Receiver" android:permission="com.amazon.device.messaging.permission.SEND">
-	<intent-filter>
-        	<action android:name="com.amazon.device.messaging.intent.REGISTRATION" />
+  <intent-filter>
+          <action android:name="com.amazon.device.messaging.intent.REGISTRATION" />
                 <action android:name="com.amazon.device.messaging.intent.RECEIVE" />
                 <category android:name="$PACKAGE_NAME" />
-	</intent-filter>
+  </intent-filter>
 </receiver>
 ```
 
@@ -100,7 +100,7 @@ xmlns:amazon="http://schemas.amazon.com/apk/res/android"
 
 ```xml
 <feature name="PushPlugin" >
-	<param name="android-package" value="com.amazon.cordova.plugin.PushPlugin"/>
+  <param name="android-package" value="com.amazon.cordova.plugin.PushPlugin"/>
 </feature>
 ```
 
@@ -125,22 +125,22 @@ xmlns:amazon="http://schemas.amazon.com/apk/res/android"
 
 The final hierarchy will likely look something like this:
 
-	{project_folder}
-		libs
-			gcm.jar
-			android-support-v13.jar
-			cordova-3.4.0.jar
-		src
-			com
-				plugin
-					gcm
-						CordovaGCMBroadcastReceiver.java
-						GCMIntentService.java
-						PushHandlerActivity.java
-						PushPlugin.java
-				{company_name}
-					{intent_name}
-						{intent_name}.java
+  {project_folder}
+    libs
+      gcm.jar
+      android-support-v13.jar
+      cordova-3.4.0.jar
+    src
+      com
+        plugin
+          gcm
+            CordovaGCMBroadcastReceiver.java
+            GCMIntentService.java
+            PushHandlerActivity.java
+            PushPlugin.java
+        {company_name}
+          {intent_name}
+            {intent_name}.java
 
 2) Modify your `AndroidManifest.xml` and add the following lines to your manifest tag:
 
@@ -158,11 +158,11 @@ The final hierarchy will likely look something like this:
 ```xml
 <activity android:name="com.plugin.gcm.PushHandlerActivity"/>
 <receiver android:name="com.plugin.gcm.CordovaGCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" >
-	<intent-filter>
-		<action android:name="com.google.android.c2dm.intent.RECEIVE" />
-		<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-		<category android:name="$PACKAGE_NAME" />
-	</intent-filter>
+  <intent-filter>
+    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+    <category android:name="$PACKAGE_NAME" />
+  </intent-filter>
 </receiver>
 <service android:name="com.plugin.gcm.GCMIntentService" />
 ```
@@ -292,9 +292,9 @@ The plugin is based on [plugman](https://github.com/apache/cordova-plugman) and 
 plugman install --platform [PLATFORM] --project [TARGET-PATH] --plugin [PLUGIN-PATH]
 
 where
-	[PLATFORM] = ios, amazon-fireos, android, wp8, windows8 or blackberry10
-	[TARGET-PATH] = path to folder containing your phonegap project
-	[PLUGIN-PATH] = path to folder containing this plugin
+  [PLATFORM] = ios, amazon-fireos, android, wp8, windows8 or blackberry10
+  [TARGET-PATH] = path to folder containing your phonegap project
+  [PLUGIN-PATH] = path to folder containing this plugin
 ```
 
 
@@ -375,7 +375,7 @@ Called when a plugin method returns without error
 ```js
 // result contains any message sent from the plugin call
 function successHandler (result) {
-	alert('result = ' + result);
+  alert('result = ' + result);
 }
 ```
 
@@ -385,7 +385,7 @@ Called when the plugin returns an error
 ```js
 // result contains any error description text returned from the plugin call
 function errorHandler (error) {
-	alert('error = ' + error);
+  alert('error = ' + error);
 }
 ```
 
@@ -395,81 +395,81 @@ Event callback that gets called when your device receives a notification
 ```js
 // iOS
 function onNotificationAPN (event) {
-	if ( event.alert )
-	{
-		navigator.notification.alert(event.alert);
-	}
+  if ( event.alert )
+  {
+    navigator.notification.alert(event.alert);
+  }
 
-	if ( event.sound )
-	{
-		var snd = new Media(event.sound);
-		snd.play();
-	}
+  if ( event.sound )
+  {
+    var snd = new Media(event.sound);
+    snd.play();
+  }
 
-	if ( event.badge )
-	{
-		pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
-	}
+  if ( event.badge )
+  {
+    pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
+  }
 }
 ```
 
 ```js
 // Android and Amazon Fire OS
 function onNotification(e) {
-	$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+  $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
 
-	switch( e.event )
-	{
-	case 'registered':
-		if ( e.regid.length > 0 )
-		{
-			$("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
-			// Your GCM push server needs to know the regID before it can push to this device
-			// here is where you might want to send it the regID for later use.
-			console.log("regID = " + e.regid);
-		}
-	break;
+  switch( e.event )
+  {
+  case 'registered':
+    if ( e.regid.length > 0 )
+    {
+      $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+      // Your GCM push server needs to know the regID before it can push to this device
+      // here is where you might want to send it the regID for later use.
+      console.log("regID = " + e.regid);
+    }
+  break;
 
-	case 'message':
-		// if this flag is set, this notification happened while we were in the foreground.
-		// you might want to play a sound to get the user's attention, throw up a dialog, etc.
-		if ( e.foreground )
-		{
-			$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
+  case 'message':
+    // if this flag is set, this notification happened while we were in the foreground.
+    // you might want to play a sound to get the user's attention, throw up a dialog, etc.
+    if ( e.foreground )
+    {
+      $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
 
-			// on Android soundname is outside the payload.
-			// On Amazon FireOS all custom attributes are contained within payload
-			var soundfile = e.soundname || e.payload.sound;
-			// if the notification contains a soundname, play it.
-			var my_media = new Media("/android_asset/www/"+ soundfile);
-			my_media.play();
-		}
-		else
-		{  // otherwise we were launched because the user touched a notification in the notification tray.
-			if ( e.coldstart )
-			{
-				$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
-			}
-			else
-			{
-				$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
-			}
-		}
+      // on Android soundname is outside the payload.
+      // On Amazon FireOS all custom attributes are contained within payload
+      var soundfile = e.soundname || e.payload.sound;
+      // if the notification contains a soundname, play it.
+      var my_media = new Media("/android_asset/www/"+ soundfile);
+      my_media.play();
+    }
+    else
+    {  // otherwise we were launched because the user touched a notification in the notification tray.
+      if ( e.coldstart )
+      {
+        $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+      }
+      else
+      {
+        $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+      }
+    }
 
-	   $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+     $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
            //Only works for GCM
-	   $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
-	   //Only works on Amazon Fire OS
-	   $status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
-	break;
+     $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+     //Only works on Amazon Fire OS
+     $status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
+  break;
 
-	case 'error':
-		$("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
-	break;
+  case 'error':
+    $("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
+  break;
 
-	default:
-		$("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
-	break;
+  default:
+    $("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+  break;
   }
 }
 ```
@@ -565,16 +565,16 @@ Event callback that gets called when your device receives a notification. This i
 //handle MPNS notifications for WP8
 function onNotificationWP8(e) {
 
-	if (e.type == "toast" && e.jsonContent) {
-		pushNotification.showToastNotification(successHandler, errorHandler,
-		{
-			"Title": e.jsonContent["wp:Text1"], "Subtitle": e.jsonContent["wp:Text2"], "NavigationUri": e.jsonContent["wp:Param"]
-		});
-		}
+  if (e.type == "toast" && e.jsonContent) {
+    pushNotification.showToastNotification(successHandler, errorHandler,
+    {
+      "Title": e.jsonContent["wp:Text1"], "Subtitle": e.jsonContent["wp:Text2"], "NavigationUri": e.jsonContent["wp:Param"]
+    });
+    }
 
-	if (e.type == "raw" && e.jsonContent) {
-		alert(e.jsonContent.Body);
-	}
+  if (e.type == "raw" && e.jsonContent) {
+    alert(e.jsonContent.Body);
+  }
 }
 ```
 
@@ -587,9 +587,9 @@ Event callback that gets called when server error occurs when receiving notifica
 
 ```js
 function jsonErrorHandler(error) {
-		$("#app-status-ul").append('<li style="color:red;">error:' + error.code + '</li>');
-		$("#app-status-ul").append('<li style="color:red;">error:' + error.message + '</li>');
-	}
+    $("#app-status-ul").append('<li style="color:red;">error:' + error.code + '</li>');
+    $("#app-status-ul").append('<li style="color:red;">error:' + error.message + '</li>');
+  }
 ```
 
 #### showToastNotification (WP8 only)
@@ -627,12 +627,12 @@ When using the plugin for wp8 you will need to unregister the push channel you h
 
 ```cs
 function unregister() {
-	var channelName = $("#channel-btn").val();
-	pushNotification.unregister(
-		successHandler, errorHandler,
-			{
-				"channelName": channelName
-			});
+  var channelName = $("#channel-btn").val();
+  pushNotification.unregister(
+    successHandler, errorHandler,
+      {
+        "channelName": channelName
+      });
 }
 ```
 
@@ -640,25 +640,25 @@ You'll probably want to trap on the **backbutton** event and only call this when
 
 ```js
 function onDeviceReady() {
-	$("#app-status-ul").append('<li>deviceready event received</li>');
+  $("#app-status-ul").append('<li>deviceready event received</li>');
 
-	document.addEventListener("backbutton", function(e)
-	{
-		$("#app-status-ul").append('<li>backbutton event received</li>');
+  document.addEventListener("backbutton", function(e)
+  {
+    $("#app-status-ul").append('<li>backbutton event received</li>');
 
-		if( $("#home").length > 0 )
-		{
-			e.preventDefault();
-			pushNotification.unregister(successHandler, errorHandler);
-			navigator.app.exitApp();
-		}
-		else
-		{
-			navigator.app.backHistory();
-		}
-	}, false);
+    if( $("#home").length > 0 )
+    {
+      e.preventDefault();
+      pushNotification.unregister(successHandler, errorHandler);
+      navigator.app.exitApp();
+    }
+    else
+    {
+      navigator.app.backHistory();
+    }
+  }, false);
 
-	// additional onDeviceReady work...
+  // additional onDeviceReady work...
 }
 ```
 
@@ -666,11 +666,11 @@ For the above to work, make sure the content for your home page is wrapped in an
 
 ```html
 <div id="home">
-	<div id="app-status-div">
-		<ul id="app-status-ul">
-			<li>Cordova PushNotification Plugin Demo</li>
-		</ul>
-	</div>
+  <div id="app-status-div">
+    <ul id="app-status-ul">
+      <li>Cordova PushNotification Plugin Demo</li>
+    </ul>
+  </div>
 </div>
 ```
 
