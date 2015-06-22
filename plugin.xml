@@ -4,7 +4,7 @@
     xmlns:amazon="http://schemas.android.com/apk/lib/com.amazon.device.ads"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     id="cordova-plugin-push-notification"
-    version="2.5.1">
+    version="2.5.2">
     <name>Push Notification</name>
     <author>Mehdy Dara</author>
     <description>
