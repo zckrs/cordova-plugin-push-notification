@@ -171,7 +171,7 @@ public class PushPlugin extends CordovaPlugin {
           json.put(key, extras.getBoolean("coldstart"));
         } else {
           // Maintain backwards compatibility
-          if (key.equals("message") || key.equals("msgcnt") || key.equals("soundname")) {
+          if (key.equals("message") || key.equals("badge") || key.equals("soundname")) {
             json.put(key, value);
           }
 

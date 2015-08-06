@@ -1,6 +1,6 @@
 {
-  "name": "cordova-plugin-push-notification",
-  "version": "2.5.2",
+  "name": "cordova-plugin-push-notification-cgvak",
+  "version": "2.5.5",
   "description": "Cordova plugin to send push notification on Android, iOS, WP8 and Windows8 devices.",
   "main": "www/PushNotification.js",
   "scripts": {
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zckrs/cordova-plugin-push-notification.git"
+    "url": "git+https://github.com/kumaresan-cgvak/cordova-plugin-push-notification.git"
   },
   "cordova": {
-    "id": "cordova-plugin-push-notification",
+    "id": "cordova-plugin-push-notification-cgvak",
     "platforms": [
       "android",
       "amazon-fireos",
@@ -31,10 +31,10 @@
     "cordova-wp8",
     "cordova-windows8"
   ],
-  "author": "Mehdy Dara <mdara@eleven-labs.com>",
+  "author": "Kumaresan C <kumaresan@cgvakindia.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zckrs/cordova-plugin-push-notification/issues"
+    "url": "https://github.com/kumaresan-cgvak/cordova-plugin-push-notification/issues"
   },
-  "homepage": "https://github.com/zckrs/cordova-plugin-push-notification#readme"
+  "homepage": "https://github.com/kumaresan-cgvak/cordova-plugin-push-notification#readme"
 }

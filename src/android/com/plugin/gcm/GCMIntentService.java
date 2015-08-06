@@ -69,7 +69,7 @@ public class GCMIntentService extends GCMBaseIntentService {
         extras.putBoolean("foreground", false);
 
         // Send a notification if there is a message
-        if (extras.getString("message") != null && extras.getString("message").length() != 0) {
+        if ((extras.getString("message") != null && extras.getString("message").length() != 0) || (extras.getString("badge") != null && extras.getString("badge").length() != 0)) {
           createNotification(context, extras);
         }
       }
@@ -109,10 +109,10 @@ public class GCMIntentService extends GCMBaseIntentService {
     if (message != null) {
       mBuilder.setContentText(message);
     } else {
-      mBuilder.setContentText("<missing message content>");
+      mBuilder.setContentText("You have received new messages..!");
     }
 
-    String msgcnt = extras.getString("msgcnt");
+    String msgcnt = extras.getString("badge");
     if (msgcnt != null) {
       mBuilder.setNumber(Integer.parseInt(msgcnt));
     }
@@ -143,7 +143,7 @@ public class GCMIntentService extends GCMBaseIntentService {
     if (isLollipop) {
       Resources r = getResources();
 
-      return r.getIdentifier("notification_icon", "raw", context.getPackageName());
+      return r.getIdentifier("icon", "drawable", context.getPackageName());
     }
 
     return context.getApplicationInfo().icon;
