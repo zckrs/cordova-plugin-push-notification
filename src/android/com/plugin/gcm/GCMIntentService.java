@@ -15,6 +15,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.os.Build;
 
+import android.graphics.BitmapFactory;
 import com.google.android.gcm.GCMBaseIntentService;
 
 @SuppressLint("NewApi")
@@ -96,7 +97,8 @@ public class GCMIntentService extends GCMBaseIntentService {
 
     NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context)
       .setDefaults(defaults)
-      .setSmallIcon(getNotificationIcon(context))
+      .setSmallIcon(getNotificationSmallIcon(context))
+      .setLargeIcon(BitmapFactory.decodeResource(getResources(), getNotificationLargeIcon(context)))
       .setWhen(System.currentTimeMillis())
       .setContentTitle(extras.getString("title"))
       .setTicker(extras.getString("title"))
@@ -137,13 +139,25 @@ public class GCMIntentService extends GCMBaseIntentService {
     return (String) appName;
   }
 
-  private int getNotificationIcon(Context context) {
+  private int getNotificationSmallIcon(Context context) {
     boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
 
     if (isLollipop) {
-      Resources r = getResources();
 
-      return r.getIdentifier("notification_icon", "raw", context.getPackageName());
+      return context.getResources().getIdentifier("small_icon", "drawable", context.getPackageName());
+
+    }
+
+    return context.getApplicationInfo().icon;
+  }
+  
+  private int getNotificationLargeIcon(Context context) {
+    boolean isLollipop = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
+
+    if (isLollipop) {
+
+     return context.getResources().getIdentifier("large_icon", "drawable", context.getPackageName());
+
     }
 
     return context.getApplicationInfo().icon;
